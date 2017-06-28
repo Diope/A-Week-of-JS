@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Bookmarking</title>
+</head>
+<style>
+  body, .jumbotron {padding: 30px}
+  body {
+    background-image: url("images/lookingUp.jpg");
+    background-size: cover;
+  }
+  .floater {
+    background: #fff;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    max-width: 475px;
+    margin: 0 auto;
+    position: relative;
+    transition:  0.3s cubic-bezier(0.175, 0.885, 0.32, 1.385) all;
+  }
+  .floater input[type=text] {
+    padding: 30px 20px;
+    border: none;
+    box-shadow: none;
+    font-size: 15px;
+    transition:  0.3s cubic-bezier(0.175, 0.885, 0.32, 1.385) all;
+  }
+  .floater-bottom {
+    padding: 6px 10px 8px;
+    text-align: right;
+    border-top: 1px solid #ddd
+  }
+  .floater-bottom button {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.85);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.3s ease opacity;
+  }
+
+  body.show-floater .floater {
+    transform: scale(1.1);
+  }
+  body.show-floater .floater input[type=text] {
+    padding: 50px 20px;
+    font-size: 18px;
+  }
+  body.show-floater .overlay {
+    opacity: 1;
+  }
+</style>
+<body>
+  <div class="overlay"></div>
+
+  <div class="floater">
+    <div class="floater-top">
+      <input type="text" class="form-control" placeholder="Enter">
+    </div>
+    <div class="floater-bottom">
+      <button type="button" class="btn btn-primary btn-sm">Add</button>
+    </div>
+  </div>
+
+  <div class="bookmarks-list content"></div>
+<script src="./js/main.js"></script>
+</body>
+</html>
